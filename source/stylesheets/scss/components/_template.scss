@@ -20,14 +20,22 @@
       width: $template-h4-width;
       margin: 0 auto;
       text-align: center;
-      color: $sub-white;
+
+      &.pull-top{
+        margin-top: - $small-pad;
+      }
 
       h2{
         margin-bottom: 0;
       }
 
-      h4{
+      h3,h4{
         font-weight: 300;
+        color: $sub-white;
+      }
+
+      p{
+        color: $sub-white;
       }
     }
   }
