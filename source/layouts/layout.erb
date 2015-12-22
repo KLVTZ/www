@@ -9,23 +9,12 @@
 		<!-- salesforce -->
 		<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
 
-    <!-- typekit fonts -->
-    <script src="https://use.typekit.net/hnq8lbo.js"></script>
-    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+		<!-- typekit fonts -->
+		<script src="https://use.typekit.net/hnq8lbo.js"></script>
+		<script>try{Typekit.load({ async: true });}catch(e){}</script>
 
 		<!-- styles -->
 		<%= stylesheet_link_tag "owl.carousel", "owl.transitions", "jquery.jscrollpane", "application" %>
-
-		<!-- lib js -->
-		<%= javascript_include_tag "jquery.min" %>
-		<%= javascript_include_tag "modernizr" %>
-		<%= javascript_include_tag "bootstrap" %>
-		<%= javascript_include_tag "owl.carousel" %>
-		<%= javascript_include_tag "jquery.jscrollpane.min" %>
-		<%= javascript_include_tag "jquery.mousewheel" %>
-    <%= javascript_include_tag "lib/Base" %>
-    <%= javascript_include_tag "app/Sidebar" %>
-		<%= javascript_include_tag "app/hashicorp" %>
 
 		<!-- Atom -->
 		<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="HashiCorp ATOM Feed">
@@ -36,9 +25,20 @@
 	</head>
 	<body class="<%= page_classes %>">
 		<%= partial "layouts/header" %>
-    <%= partial "layouts/sidebar" %>
+		<%= partial "layouts/sidebar" %>
 		<%= yield %>
 		<%= partial "layouts/footer" %>
+
+		<!-- lib js -->
+		<%= javascript_include_tag "jquery.min" %>
+		<%= javascript_include_tag "modernizr" %>
+		<%= javascript_include_tag "bootstrap" %>
+		<%= javascript_include_tag "owl.carousel" %>
+		<%= javascript_include_tag "jquery.jscrollpane.min" %>
+		<%= javascript_include_tag "jquery.mousewheel" %>
+		<%= javascript_include_tag "lib/Base" %>
+		<%= javascript_include_tag "app/Sidebar" %>
+		<%= javascript_include_tag "app/hashicorp" %>
 	</body>
 	<!-- hc -->
 </html>
