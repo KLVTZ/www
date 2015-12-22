@@ -46,7 +46,7 @@
       });
     },
 
-    closeSidebar(){
+    closeSidebar: function(){
       var _this = this;
       _this.$overlay.removeClass('active');
       _this.$body.css('overflow', 'auto');
