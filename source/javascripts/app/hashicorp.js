@@ -39,7 +39,8 @@
 
         _this.ui.$hero.css('webkitTransform', 'translate(0, 0rem)'); // prevent initial jump
 
-        this.addEventListeners();
+        _this.addEventListeners();
+        _this.handleScroll();
       },
 
       addEventListeners: function(){
@@ -48,17 +49,20 @@
         // if(HSHC.Utils.isMobile)
         //  return;
 
-        _this.ui.$doc.scroll(function() {
-          //if collapseable menu is open dont do parrallax. It looks wonky. Bootstrap conflict
-          // if( _this.ui.$collapse.hasClass('in'))
-              // return;
+        _this.ui.$doc.scroll(_this.handleScroll.bind(this));
+      },
 
-          var scrolled = _this.ui.$doc.scrollTop();
+      handleScroll: function() {
+        var _this = this;
+        //if collapseable menu is open dont do parrallax. It looks wonky. Bootstrap conflict
+        // if( _this.ui.$collapse.hasClass('in'))
+            // return;
 
-          _this.ui.$hero.css('webkitTransform', 'translate(0, ' + -(scrolled*0.0315) + 'rem)');
-          _this.ui.$heroContent.css('webkitTransform', 'translate(0, '+  -(scrolled*-0.005) +'rem)');
-          _this.ui.$heroContent.css('opacity', 1 - (scrolled*.00175));
-        })
+        var scrolled = _this.ui.$doc.scrollTop();
+
+        _this.ui.$hero.css('webkitTransform', 'translate(0, ' + -(scrolled*0.0315) + 'rem)');
+        _this.ui.$heroContent.css('webkitTransform', 'translate(0, '+  -(scrolled*-0.005) +'rem)');
+        _this.ui.$heroContent.css('opacity', 1 - (scrolled*.00175));
       }
     }
   }());
