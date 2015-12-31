@@ -27,29 +27,17 @@ Then open up `localhost:4567`. Note that some URLs you may need to append
 
 ## Stylesheets
 
-We use [Less](http://lesscss.org) to generate site-specific stylesheets along
-with [Bootstrap](http://getbootstrap.com). [Grunt](http://gruntjs.com)
-is used to create a watcher for changes to the `.less` files.  The
-watcher re-compiles the hashicorp.css file when it detects changes in
-the .less files.
-
-Assuming you have [npm](http://npmjs.com), 
-[node.js](http://node.js), and [Less](http://lesscss.org) installed, you can install and run Grunt
-and the watcher this way:
-
-```
-$ npm install -g grunt-cli
-$ npm install
-$ grunt
-```
+Middleman supports Sass in generating site-specific stylesheets along with
+[Bootstrap](http://getbootstrap.com). A change can occur within
+`source/stylesheets` and Middleman will generate a new `application.css`
 
 ## Heroku
 
-To trigger `middleman` static builds on a `git push`, we use this
-buildpack: 
-[https://github.com/hashicorp/heroku-buildpack-middleman](https://github.com/hashicorp/heroku-buildpack-middleman), in addition to the standard Ruby buildback.  Note the example below pushes your local
-branch as remote master to trigger build.  To run this on Heroku, 
-enable multiple buildpacks this way:
+To trigger `middleman` static builds on a `git push`, we use this buildpack:
+[https://github.com/hashicorp/heroku-buildpack-middleman](https://github.com/hashicorp/heroku-buildpack-middleman),
+in addition to the standard Ruby buildback.  Note the example below pushes your
+local branch as remote master to trigger build.  To run this on Heroku, enable
+multiple buildpacks this way:
 
 ```
 heroku create
